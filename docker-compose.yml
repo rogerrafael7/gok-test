@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: gok_user
+      POSTGRES_PASSWORD: gok_pass
+    volumes:
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - gok_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gok_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5436:5432"
+
+  gok:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_HOST: postgres
+      DB_USER: gok_user
+      DB_PASSWORD: gok_pass
+      DB_NAME: gok
+      DB_PORT: 5432
+    networks:
+      - gok_network
+    ports:
+      - "8081:8081"
+
+
+networks:
+  gok_network:
+    driver: bridge
