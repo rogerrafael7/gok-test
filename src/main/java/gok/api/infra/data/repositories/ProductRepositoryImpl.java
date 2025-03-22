@@ -1,23 +1,17 @@
 package gok.api.infra.data.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
-import jakarta.transaction.Transactional;
-import gok.api.domain.dto.GetProductsByIdsResponse;
 import gok.api.domain.models.product.ProductModel;
 import gok.api.domain.repositories.ProductRepository;
-import gok.api.domain.repositories.dto.CreateProductModelRequest;
-import gok.api.domain.repositories.dto.UpdateProductModelRequest;
 import gok.api.infra.data.entities.ProductEntity;
 import gok.api.infra.shared.exceptions.SERVER_EXCEPTION_CAUSE;
 import gok.api.infra.shared.exceptions.ServerException;
 import gok.api.infra.shared.types.PaginationRequest;
 import gok.api.infra.shared.types.PaginationResponse;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @ApplicationScoped
 public class ProductRepositoryImpl extends ProductRepository {
@@ -26,33 +20,12 @@ public class ProductRepositoryImpl extends ProductRepository {
     EntityManager entityManager;
 
     @Override
-    public ProductModel getProductByIdOrFail(UUID id) throws ServerException {
+    public ProductModel getProductByIdOrFail(Long id) throws ServerException {
         var productEntity = entityManager.find(ProductEntity.class, id);
         if (productEntity == null) {
             throw new ServerException("Product not found", SERVER_EXCEPTION_CAUSE.BAD_REQUEST);
         }
         return productEntity;
-    }
-
-    @Override
-    public GetProductsByIdsResponse getProductModelsByIds(List<UUID> ids) {
-        var listFromDatabase = entityManager.createQuery("SELECT p FROM products p WHERE p.id IN :ids", ProductModel.class)
-                .setParameter("ids", ids)
-                .getResultList();
-
-        List<ProductModel> productsFound = new ArrayList<>();
-        List<UUID> productIdsNotFound = new ArrayList<>();
-
-        for (var id : ids) {
-            var product = listFromDatabase.stream().filter(p -> p.getId().equals(id)).findFirst();
-            if (product.isPresent()) {
-                productsFound.add(product.get());
-            } else {
-                productIdsNotFound.add(id);
-            }
-        }
-
-        return new GetProductsByIdsResponse(productsFound, productIdsNotFound);
     }
 
     @Override
@@ -84,34 +57,5 @@ public class ProductRepositoryImpl extends ProductRepository {
         );
     }
 
-    @Transactional
-    @Override
-    public ProductModel createProduct(CreateProductModelRequest product) {
-        ProductModel productEntity = new ProductEntity();
-        productEntity.setName(product.name());
-        productEntity.setName(product.name());
-        productEntity.setPrice(product.price());
-        productEntity.setType(product.type());
-        productEntity.setDescription(product.description().orElse(null));
-        entityManager.persist(productEntity);
-        return productEntity;
-    }
 
-    @Transactional
-    @Override
-    public void updateProduct(UUID id, UpdateProductModelRequest product) {
-        ProductModel productModel = getProductByIdOrFail(id);
-        product.name().ifPresent(productModel::setName);
-        product.price().ifPresent(productModel::setPrice);
-        product.type().ifPresent(productModel::setType);
-        product.description().ifPresent(productModel::setDescription);
-        entityManager.persist(productModel);
-    }
-
-    @Transactional
-    @Override
-    public void deleteProduct(UUID id) {
-        var productEntity = getProductByIdOrFail(id);
-        entityManager.remove(productEntity);
-    }
 }

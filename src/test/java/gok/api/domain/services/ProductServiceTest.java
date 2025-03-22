@@ -16,11 +16,11 @@ import gok.api.infra.shared.types.PaginationResponse;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -39,7 +39,7 @@ public class ProductServiceTest {
     ObjectMapper objectMapper;
 
     private static String loadJson(String path) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(STR."src/test/resources/\{path}")));
+        return new String(Files.readAllBytes(Paths.get("src/test/resources/" + path)));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class ProductServiceTest {
 
     @Test
     public void testGetProductById() throws ServerException {
-        UUID productId = UUID.randomUUID();
+        Long productId = 1L;
         ProductModel mockProduct = new ProductModel();
         mockProduct.setId(productId);
         mockProduct.setName("Product");
@@ -78,9 +78,9 @@ public class ProductServiceTest {
 
     @Test
     public void testCreateProduct() {
-        CreateProductRequest request = new CreateProductRequest("Product", 100.0, "Type", Optional.empty());
+        CreateProductRequest request = new CreateProductRequest("Product", new BigDecimal("100.0"), "Type", Optional.empty());
         ProductModel mockProduct = new ProductModel();
-        mockProduct.setId(UUID.randomUUID());
+        mockProduct.setId(1L);
         mockProduct.setName("Product");
 
         when(productRepository.createProduct(any())).thenReturn(mockProduct);
@@ -94,8 +94,13 @@ public class ProductServiceTest {
 
     @Test
     public void testUpdateProduct() throws ServerException {
-        UUID productId = UUID.randomUUID();
-        UpdateProductRequest request = new UpdateProductRequest(Optional.of("Updated Product"), Optional.of(200.0), Optional.of("Updated Type"), Optional.of("Updated Description"));
+        Long productId = 1L;
+        UpdateProductRequest request = new UpdateProductRequest(
+                Optional.of("Updated Product"), 
+                Optional.of(new BigDecimal("200.0")),
+                Optional.of("Updated Type"),
+                Optional.of("Updated Description")
+        );
 
         doNothing().when(productRepository).updateProduct(eq(productId), any());
 
@@ -106,7 +111,7 @@ public class ProductServiceTest {
 
     @Test
     public void testDeleteProduct() throws ServerException {
-        UUID productId = UUID.randomUUID();
+        Long productId = 1L;
 
         doNothing().when(productRepository).deleteProduct(productId);
 
@@ -117,7 +122,7 @@ public class ProductServiceTest {
 
     @Test
     public void testGetProductsByIds() {
-        List<UUID> productIds = List.of(UUID.randomUUID(), UUID.randomUUID());
+        List<Long> productIds = List.of(1L, 2L);
         GetProductsByIdsResponse mockResponse = new GetProductsByIdsResponse(List.of(), List.of());
 
         when(productRepository.getProductModelsByIds(productIds)).thenReturn(mockResponse);
