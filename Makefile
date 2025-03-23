@@ -1,3 +1,9 @@
+database:
+	docker-compose up -d postgres
+
+fix-migrations:
+	flyway repair -url=jdbc:postgresql://localhost:5436/gok -user=gok_user -password=gok_pass
+
 install:
 	./mvnw clean install -DskipTests
 

@@ -12,6 +12,6 @@ public class HealthCheckController {
 
     @GET
     public HealthCheckResponse healthCheck() {
-        return new HealthCheckResponse("UP 3");
+        return new HealthCheckResponse("Running!");
     }
 }

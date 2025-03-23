@@ -5,8 +5,8 @@ import jakarta.ws.rs.QueryParam;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 public class DefaultPaginationRequest implements PaginationRequest {
     @QueryParam("page")
     @DefaultValue("1")

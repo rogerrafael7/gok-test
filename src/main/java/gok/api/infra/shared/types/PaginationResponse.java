@@ -5,7 +5,7 @@ import java.util.List;
 public record PaginationResponse<T>(
         int page,
         int limit,
-        int totalItems,
+        long totalItems,
         int totalPages,
         Boolean hasNextPage,
         Boolean hasPreviousPage,
