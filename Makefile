@@ -16,5 +16,5 @@ build:
 dev:
 	./mvnw quarkus:dev -DskipTests -Dquarkus.args="--enable-preview"
 
-prod:
+run:
 	docker-compose up -d

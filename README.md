@@ -1,62 +1,80 @@
-# gok-api
+# GoK - Teste
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+## 🐳 Get Started
 
-If you want to learn more about Quarkus, please visit its website: <https://quarkus.io/>.
-
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-
-```shell script
-./mvnw compile quarkus:dev
+Para rodar o projeto(no Docker):
+```bash
+make run
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at <http://localhost:8080/q/dev/>.
+---
 
-## Packaging and running the application
+## ✅ Testes
 
-The application can be packaged using:
-
-```shell script
-./mvnw package
+Para executar os testes da aplicação:
+```bash
+make test
 ```
 
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+---
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+### Collection do Postman com todos os endpoints:
+  [Link para a coleção Postman](https://github.com/rogerrafael7/gok-test.git/tree/master/docs/gok-collection-teste.json)
 
-If you want to build an _über-jar_, execute the following command:
+---
 
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
+## 🛠️ Principais Comandos do Makefile
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+| Comando         | Descrição                                                                 |
+|-----------------|---------------------------------------------------------------------------|
+| `make run`      | Inicia a aplicação localmente.                                            |
+| `make build`    | Compila o projeto.                                                        |
+| `make test`     | Executa os testes automatizados.                                          |
 
-## Creating a native executable
+---
 
-You can create a native executable using:
+## 🌐 Endpoints da API
 
-```shell script
-./mvnw package -Dnative
-```
+### 🔍 Health Check
+- **GET** `/health`  
+  Verifica se a API está em funcionamento.
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
+---
 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
+### 📦 Categorias
+- **GET** `/categorias`  
+  Retorna a lista de categorias com suas respectivas subcategorias.
 
-You can then execute your native executable with: `./target/gok-api-1.0.0-SNAPSHOT-runner`
+---
 
-If you want to learn more about building native executables, please consult <https://quarkus.io/guides/maven-tooling>.
+### 🛒 Compras
 
-## Provided Code
+- **GET** `/compras?page=1&limit=5`  
+  Retorna uma lista paginada de compras realizadas, com informações de cliente e produtos comprados.
 
-### REST
+- **GET** `/compras/maior-compra/:year`  
+  Retorna a maior compra do ano especificado.  
+  Parâmetros aceitos(devido a atual massa de dados): `2023`, `2024`, `2025`.
 
-Easily start your REST Web Services
+---
 
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+### 👤 Clientes
+
+- **GET** `/clientes/top`  
+  Retorna os 3 clientes que mais compraram.
+
+- **GET** `/clientes/recomendacao/client/:customerId/tipo`  
+  Retorna recomendações de produtos com base no histórico de compras do cliente.  
+  Parâmetro: `customerId` (ID do cliente)
+
+---
+
+### 🧪 Endpoints Mock
+
+Utilizados para testes e simulações:
+
+- **GET** `https://run.mocky.io/v3/45e7bcac-6f2c-40f1-8662-eb3a62aa005c`  
+  Lista de produtos mockados.
+
+- **GET** `https://run.mocky.io/v3/d1992fa3-e01d-43ea-97d6-e8ef302c886d`  
+  Lista de clientes e suas compras (mock).

@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "d954368d-22dd-476b-afae-8a6aa7f9d7c7",
+		"name": "GoK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29006644"
+	},
+	"item": [
+		{
+			"name": "[MOCK] Lista de Produtos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://run.mocky.io/v3/45e7bcac-6f2c-40f1-8662-eb3a62aa005c",
+					"protocol": "https",
+					"host": [
+						"run",
+						"mocky",
+						"io"
+					],
+					"path": [
+						"v3",
+						"45e7bcac-6f2c-40f1-8662-eb3a62aa005c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "[MOCK] Lista de Clientes e Compras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://run.mocky.io/v3/d1992fa3-e01d-43ea-97d6-e8ef302c886d",
+					"protocol": "https",
+					"host": [
+						"run",
+						"mocky",
+						"io"
+					],
+					"path": [
+						"v3",
+						"d1992fa3-e01d-43ea-97d6-e8ef302c886d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Categorias",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "1175"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Cerveja\",\n        \"subCategories\": [\n            {\n                \"id\": 9,\n                \"name\": \"Pilsen\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 10,\n                \"name\": \"IPA\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 11,\n                \"name\": \"Weiss\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 12,\n                \"name\": \"Lager\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 13,\n                \"name\": \"Stout\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 14,\n                \"name\": \"Porter\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 15,\n                \"name\": \"Ale\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 16,\n                \"name\": \"Artesanal\",\n                \"categoryId\": null\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Destilados\",\n        \"subCategories\": [\n            {\n                \"id\": 17,\n                \"name\": \"Whisky\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 18,\n                \"name\": \"Vodka\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 19,\n                \"name\": \"Rum\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 20,\n                \"name\": \"Cachaça\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 21,\n                \"name\": \"Gin\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 22,\n                \"name\": \"Tequila\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 23,\n                \"name\": \"Licor\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 24,\n                \"name\": \"Conhaque\",\n                \"categoryId\": null\n            }\n        ]\n    },\n    {\n        \"id\": 1,\n        \"name\": \"Vinho\",\n        \"subCategories\": [\n            {\n                \"id\": 1,\n                \"name\": \"Tinto\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Branco\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 3,\n                \"name\": \"Rosé\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 4,\n                \"name\": \"Espumante\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 5,\n                \"name\": \"Suave\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 6,\n                \"name\": \"Seco\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Importado\",\n                \"categoryId\": null\n            },\n            {\n                \"id\": 8,\n                \"name\": \"Nacional\",\n                \"categoryId\": null\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Compras",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/compras?page=1&limit=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"compras"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Compras",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/compras?page=1&limit=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"compras"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "2828"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"page\": 1,\n    \"limit\": 5,\n    \"totalItems\": 30,\n    \"totalPages\": 6,\n    \"hasNextPage\": true,\n    \"hasPreviousPage\": false,\n    \"data\": [\n        {\n            \"id\": 20,\n            \"totalPrice\": 12.9,\n            \"customer\": {\n                \"id\": 10,\n                \"name\": \"Larissa Rocha\",\n                \"taxId\": \"012.345.678-19\",\n                \"orders\": null\n            },\n            \"orderProducts\": [\n                {\n                    \"id\": 124,\n                    \"quantity\": 1,\n                    \"unitPrice\": 12.9,\n                    \"product\": {\n                        \"id\": 6,\n                        \"name\": \"Cerveja Stout Imperial\",\n                        \"currentPrice\": 12.9,\n                        \"subCategory\": {\n                            \"id\": 13,\n                            \"name\": \"Stout\",\n                            \"categoryId\": 2\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"totalPrice\": 65.4,\n            \"customer\": {\n                \"id\": 6,\n                \"name\": \"Mariana Costa\",\n                \"taxId\": \"678.901.234-15\",\n                \"orders\": null\n            },\n            \"orderProducts\": [\n                {\n                    \"id\": 50,\n                    \"quantity\": 2,\n                    \"unitPrice\": 10.9,\n                    \"product\": {\n                        \"id\": 8,\n                        \"name\": \"Cerveja Ale\",\n                        \"currentPrice\": 10.9,\n                        \"subCategory\": {\n                            \"id\": 15,\n                            \"name\": \"Ale\",\n                            \"categoryId\": 2\n                        }\n                    }\n                },\n                {\n                    \"id\": 51,\n                    \"quantity\": 4,\n                    \"unitPrice\": 10.9,\n                    \"product\": {\n                        \"id\": 8,\n                        \"name\": \"Cerveja Ale\",\n                        \"currentPrice\": 10.9,\n                        \"subCategory\": {\n                            \"id\": 15,\n                            \"name\": \"Ale\",\n                            \"categoryId\": 2\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 23,\n            \"totalPrice\": 79.9,\n            \"customer\": {\n                \"id\": 6,\n                \"name\": \"Mariana Costa\",\n                \"taxId\": \"678.901.234-15\",\n                \"orders\": null\n            },\n            \"orderProducts\": [\n                {\n                    \"id\": 131,\n                    \"quantity\": 1,\n                    \"unitPrice\": 79.9,\n                    \"product\": {\n                        \"id\": 11,\n                        \"name\": \"Rum Especial\",\n                        \"currentPrice\": 79.9,\n                        \"subCategory\": {\n                            \"id\": 19,\n                            \"name\": \"Rum\",\n                            \"categoryId\": 3\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"totalPrice\": 412.7,\n            \"customer\": {\n                \"id\": 3,\n                \"name\": \"Carlos Pereira\",\n                \"taxId\": \"345.678.901-12\",\n                \"orders\": null\n            },\n            \"orderProducts\": [\n                {\n                    \"id\": 45,\n                    \"quantity\": 1,\n                    \"unitPrice\": 11.9,\n                    \"product\": {\n                        \"id\": 7,\n                        \"name\": \"Cerveja Porter\",\n                        \"currentPrice\": 11.9,\n                        \"subCategory\": {\n                            \"id\": 14,\n                            \"name\": \"Porter\",\n                            \"categoryId\": 2\n                        }\n                    }\n                },\n                {\n                    \"id\": 46,\n                    \"quantity\": 5,\n                    \"unitPrice\": 49.9,\n                    \"product\": {\n                        \"id\": 5,\n                        \"name\": \"Vinho Rosé Seco\",\n                        \"currentPrice\": 49.9,\n                        \"subCategory\": {\n                            \"id\": 3,\n                            \"name\": \"Rosé\",\n                            \"categoryId\": 1\n                        }\n                    }\n                },\n                {\n                    \"id\": 47,\n                    \"quantity\": 1,\n                    \"unitPrice\": 79.9,\n                    \"product\": {\n                        \"id\": 11,\n                        \"name\": \"Rum Especial\",\n                        \"currentPrice\": 79.9,\n                        \"subCategory\": {\n                            \"id\": 19,\n                            \"name\": \"Rum\",\n                            \"categoryId\": 3\n                        }\n                    }\n                },\n                {\n                    \"id\": 48,\n                    \"quantity\": 3,\n                    \"unitPrice\": 11.9,\n                    \"product\": {\n                        \"id\": 7,\n                        \"name\": \"Cerveja Porter\",\n                        \"currentPrice\": 11.9,\n                        \"subCategory\": {\n                            \"id\": 14,\n                            \"name\": \"Porter\",\n                            \"categoryId\": 2\n                        }\n                    }\n                },\n                {\n                    \"id\": 49,\n                    \"quantity\": 3,\n                    \"unitPrice\": 11.9,\n                    \"product\": {\n                        \"id\": 7,\n                        \"name\": \"Cerveja Porter\",\n                        \"currentPrice\": 11.9,\n                        \"subCategory\": {\n                            \"id\": 14,\n                            \"name\": \"Porter\",\n                            \"categoryId\": 2\n                        }\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 22,\n            \"totalPrice\": 517,\n            \"customer\": {\n                \"id\": 4,\n                \"name\": \"Ana Oliveira\",\n                \"taxId\": \"456.789.012-13\",\n                \"orders\": null\n            },\n            \"orderProducts\": [\n                {\n                    \"id\": 127,\n                    \"quantity\": 2,\n                    \"unitPrice\": 54.9,\n                    \"product\": {\n                        \"id\": 3,\n                        \"name\": \"Vinho Branco Sauvignon\",\n                        \"currentPrice\": 54.9,\n                        \"subCategory\": {\n                            \"id\": 2,\n                            \"name\": \"Branco\",\n                            \"categoryId\": 1\n                        }\n                    }\n                },\n                {\n                    \"id\": 128,\n                    \"quantity\": 2,\n                    \"unitPrice\": 11.9,\n                    \"product\": {\n                        \"id\": 7,\n                        \"name\": \"Cerveja Porter\",\n                        \"currentPrice\": 11.9,\n                        \"subCategory\": {\n                            \"id\": 14,\n                            \"name\": \"Porter\",\n                            \"categoryId\": 2\n                        }\n                    }\n                },\n                {\n                    \"id\": 129,\n                    \"quantity\": 4,\n                    \"unitPrice\": 89.9,\n                    \"product\": {\n                        \"id\": 10,\n                        \"name\": \"Vodka Premium\",\n                        \"currentPrice\": 89.9,\n                        \"subCategory\": {\n                            \"id\": 18,\n                            \"name\": \"Vodka\",\n                            \"categoryId\": 3\n                        }\n                    }\n                },\n                {\n                    \"id\": 130,\n                    \"quantity\": 2,\n                    \"unitPrice\": 11.9,\n                    \"product\": {\n                        \"id\": 7,\n                        \"name\": \"Cerveja Porter\",\n                        \"currentPrice\": 11.9,\n                        \"subCategory\": {\n                            \"id\": 14,\n                            \"name\": \"Porter\",\n                            \"categoryId\": 2\n                        }\n                    }\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Maior Compra Por ano",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/compras/maior-compra/:year",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"compras",
+						"maior-compra",
+						":year"
+					],
+					"variable": [
+						{
+							"key": "year",
+							"value": "2025",
+							"description": "Valores previstos: 2025, 2024 e 2023"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Maior Compra Por ano",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/compras/maior-compra/:year",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"compras",
+								"maior-compra",
+								":year"
+							],
+							"variable": [
+								{
+									"key": "year",
+									"value": "2025",
+									"description": "Valores previstos: 2025, 2024 e 2023"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "1422"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"totalPrice\": 1982.6,\n    \"customer\": {\n        \"id\": 10,\n        \"name\": \"Larissa Rocha\",\n        \"taxId\": \"012.345.678-19\",\n        \"orders\": null\n    },\n    \"orderProducts\": [\n        {\n            \"id\": 24,\n            \"quantity\": 3,\n            \"unitPrice\": 69.9,\n            \"product\": {\n                \"id\": 2,\n                \"name\": \"Vinho Tinto Merlot\",\n                \"currentPrice\": 69.9,\n                \"subCategory\": {\n                    \"id\": 1,\n                    \"name\": \"Tinto\",\n                    \"categoryId\": 1\n                }\n            }\n        },\n        {\n            \"id\": 25,\n            \"quantity\": 1,\n            \"unitPrice\": 109.9,\n            \"product\": {\n                \"id\": 13,\n                \"name\": \"Gyn Special\",\n                \"currentPrice\": 109.9,\n                \"subCategory\": {\n                    \"id\": 22,\n                    \"name\": \"Tequila\",\n                    \"categoryId\": 3\n                }\n            }\n        },\n        {\n            \"id\": 26,\n            \"quantity\": 2,\n            \"unitPrice\": 79.9,\n            \"product\": {\n                \"id\": 1,\n                \"name\": \"Vinho Tinto Cabernet\",\n                \"currentPrice\": 79.9,\n                \"subCategory\": {\n                    \"id\": 1,\n                    \"name\": \"Tinto\",\n                    \"categoryId\": 1\n                }\n            }\n        },\n        {\n            \"id\": 27,\n            \"quantity\": 5,\n            \"unitPrice\": 79.9,\n            \"product\": {\n                \"id\": 11,\n                \"name\": \"Rum Especial\",\n                \"currentPrice\": 79.9,\n                \"subCategory\": {\n                    \"id\": 19,\n                    \"name\": \"Rum\",\n                    \"categoryId\": 3\n                }\n            }\n        },\n        {\n            \"id\": 28,\n            \"quantity\": 4,\n            \"unitPrice\": 109.9,\n            \"product\": {\n                \"id\": 13,\n                \"name\": \"Gyn Special\",\n                \"currentPrice\": 109.9,\n                \"subCategory\": {\n                    \"id\": 22,\n                    \"name\": \"Tequila\",\n                    \"categoryId\": 3\n                }\n            }\n        },\n        {\n            \"id\": 29,\n            \"quantity\": 3,\n            \"unitPrice\": 54.9,\n            \"product\": {\n                \"id\": 3,\n                \"name\": \"Vinho Branco Sauvignon\",\n                \"currentPrice\": 54.9,\n                \"subCategory\": {\n                    \"id\": 2,\n                    \"name\": \"Branco\",\n                    \"categoryId\": 1\n                }\n            }\n        },\n        {\n            \"id\": 30,\n            \"quantity\": 2,\n            \"unitPrice\": 69.9,\n            \"product\": {\n                \"id\": 2,\n                \"name\": \"Vinho Tinto Merlot\",\n                \"currentPrice\": 69.9,\n                \"subCategory\": {\n                    \"id\": 1,\n                    \"name\": \"Tinto\",\n                    \"categoryId\": 1\n                }\n            }\n        },\n        {\n            \"id\": 31,\n            \"quantity\": 4,\n            \"unitPrice\": 89.9,\n            \"product\": {\n                \"id\": 10,\n                \"name\": \"Vodka Premium\",\n                \"currentPrice\": 89.9,\n                \"subCategory\": {\n                    \"id\": 18,\n                    \"name\": \"Vodka\",\n                    \"categoryId\": 3\n                }\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Top 3 Clientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/clientes/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"clientes",
+						"top"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Top 3 Clientes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/clientes/top",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"top"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "218"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 10,\n        \"name\": \"Larissa Rocha\",\n        \"totalDeCompras\": 45,\n        \"totalGasto\": 74094.1\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Rafael Lima\",\n        \"totalDeCompras\": 28,\n        \"totalGasto\": 46606.8\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Ana Oliveira\",\n        \"totalDeCompras\": 32,\n        \"totalGasto\": 43505.5\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Recomendacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/clientes/recomendacao/client/:customerId/tipo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"clientes",
+						"recomendacao",
+						"client",
+						":customerId",
+						"tipo"
+					],
+					"variable": [
+						{
+							"key": "customerId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Recomendacao",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/clientes/recomendacao/client/:customerId/tipo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clientes",
+								"recomendacao",
+								"client",
+								":customerId",
+								"tipo"
+							],
+							"variable": [
+								{
+									"key": "customerId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "109"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 10,\n        \"name\": \"Vodka Premium\",\n        \"currentPrice\": 89.9,\n        \"subCategory\": {\n            \"id\": 18,\n            \"name\": \"Vodka\",\n            \"categoryId\": 3\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}
