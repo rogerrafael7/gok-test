@@ -19,7 +19,7 @@ make test
 ---
 
 ### Collection do Postman com todos os endpoints:
-  [Link para a coleção Postman](https://github.com/rogerrafael7/gok-test.git/tree/master/docs/gok-collection-teste.json)
+  [Link para a coleção Postman](https://github.com/rogerrafael7/gok-test/blob/master/docs/gok-collection-teste.json)
 
 ---
 
