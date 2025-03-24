@@ -6,5 +6,5 @@ import gok.api.infra.shared.types.PaginationResponse;
 
 public abstract class OrderRepository {
     public abstract PaginationResponse<OrderModel> getOrders(PaginationRequest paginationRequest);
-    public abstract OrderModel getBiggestOrderByYear(int year);
+    public abstract OrderModel getBiggestOrderByYear(int year) throws Exception;
 }

@@ -1,4 +1,4 @@
-package gok.api.domain.services;
+package gok.api.application.services;
 
 import gok.api.domain.models.OrderModel;
 import gok.api.domain.repositories.OrderRepository;
@@ -16,7 +16,7 @@ public class OrderService {
         return orderRepository.getOrders(paginationRequest);
     }
 
-    public OrderModel getBiggestOrderByYear(int year) {
+    public OrderModel getBiggestOrderByYear(int year) throws Exception {
         return orderRepository.getBiggestOrderByYear(year);
     }
 }

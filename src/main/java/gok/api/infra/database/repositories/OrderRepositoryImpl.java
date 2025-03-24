@@ -3,6 +3,8 @@ package gok.api.infra.database.repositories;
 import gok.api.domain.models.OrderModel;
 import gok.api.domain.repositories.OrderRepository;
 import gok.api.infra.database.entities.OrderEntity;
+import gok.api.infra.shared.exceptions.SERVER_EXCEPTION_CAUSE;
+import gok.api.infra.shared.exceptions.ServerException;
 import gok.api.infra.shared.types.PaginationRequest;
 import gok.api.infra.shared.types.PaginationResponse;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
@@ -40,10 +42,15 @@ public class OrderRepositoryImpl extends OrderRepository implements PanacheRepos
     }
 
     @Override
-    public OrderModel getBiggestOrderByYear(int year) {
+    public OrderModel getBiggestOrderByYear(int year) throws Exception {
         var params = Parameters.with("year", year);
         OrderEntity orderEntity = find("EXTRACT(YEAR FROM createdAt) = :year ORDER BY totalPrice DESC", params)
                 .firstResult();
+
+        if (orderEntity == null) {
+            throw new ServerException("No orders found for the year " + year, SERVER_EXCEPTION_CAUSE.NOT_FOUND);
+        }
+
         return orderEntity.toModel();
     }
 }
