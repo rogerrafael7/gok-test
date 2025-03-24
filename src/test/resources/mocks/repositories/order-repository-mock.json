@@ -1,0 +1,129 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "totalPrice": 289.70,
+      "customer": {
+        "id": 3,
+        "name": "Carlos Pereira"
+      },
+      "orderProducts": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Vinho Tinto Cabernet",
+            "currentPrice": 79.90
+          },
+          "quantity": 2,
+          "unitPrice": 79.90
+        },
+        {
+          "product": {
+            "id": 9,
+            "name": "Whisky 12 anos",
+            "currentPrice": 129.90
+          },
+          "quantity": 1,
+          "unitPrice": 129.90
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "totalPrice": 269.70,
+      "customer": {
+        "id": 1,
+        "name": "João Silva"
+      },
+      "orderProducts": [
+        {
+          "product": {
+            "id": 4,
+            "name": "Espumante Prosecco",
+            "currentPrice": 89.90
+          },
+          "quantity": 3,
+          "unitPrice": 89.90
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "totalPrice": 124.00,
+      "customer": {
+        "id": 5,
+        "name": "Pedro Santos"
+      },
+      "orderProducts": [
+        {
+          "product": {
+            "id": 6,
+            "name": "Cerveja Stout Imperial",
+            "currentPrice": 12.90
+          },
+          "quantity": 5,
+          "unitPrice": 12.90
+        },
+        {
+          "product": {
+            "id": 7,
+            "name": "Cerveja Porter",
+            "currentPrice": 11.90
+          },
+          "quantity": 5,
+          "unitPrice": 11.90
+        }
+      ]
+    }
+  ],
+  "biggestOrdersByYear": {
+    "2023": {
+      "id": 1,
+      "totalPrice": 289.70,
+      "customer": {
+        "id": 3,
+        "name": "Carlos Pereira"
+      },
+      "orderProducts": [
+        {
+          "product": {
+            "id": 1,
+            "name": "Vinho Tinto Cabernet"
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "id": 9,
+            "name": "Whisky 12 anos"
+          },
+          "quantity": 1
+        }
+      ]
+    },
+    "2024": {
+      "id": 3,
+      "totalPrice": 124.00,
+      "customer": {
+        "id": 5,
+        "name": "Pedro Santos"
+      },
+      "orderProducts": [
+        {
+          "product": {
+            "id": 6,
+            "name": "Cerveja Stout Imperial"
+          },
+          "quantity": 5
+        },
+        {
+          "product": {
+            "id": 7,
+            "name": "Cerveja Porter"
+          },
+          "quantity": 5
+        }
+      ]
+    }
+  }
+} 

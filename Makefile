@@ -7,7 +7,7 @@ database:
 fix-migrations:
 	flyway repair -url=jdbc:postgresql://localhost:5436/gok -user=gok_user -password=gok_pass
 
-tests:
+test:
 	./mvnw test -Dquarkus.args="--enable-preview"
 
 build:

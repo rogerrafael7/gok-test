@@ -1,0 +1,68 @@
+{
+  "topCustomers": [
+    {
+      "id": 1,
+      "name": "João Silva",
+      "totalDeCompras": 15,
+      "totalGasto": 1500.00
+    },
+    {
+      "id": 2,
+      "name": "Maria Souza",
+      "totalDeCompras": 12,
+      "totalGasto": 1200.00
+    },
+    {
+      "id": 3,
+      "name": "Carlos Pereira",
+      "totalDeCompras": 10,
+      "totalGasto": 950.00
+    }
+  ],
+  "suggestionProducts": {
+    "1": [
+      {
+        "id": 1,
+        "name": "Vinho Tinto Cabernet",
+        "currentPrice": 79.90,
+        "subCategory": {
+          "id": 1,
+          "name": "Tinto",
+          "categoryId": 1
+        }
+      },
+      {
+        "id": 6,
+        "name": "Cerveja Stout Imperial",
+        "currentPrice": 12.90,
+        "subCategory": {
+          "id": 13,
+          "name": "Stout",
+          "categoryId": 2
+        }
+      }
+    ],
+    "2": [
+      {
+        "id": 9,
+        "name": "Whisky 12 anos",
+        "currentPrice": 129.90,
+        "subCategory": {
+          "id": 17,
+          "name": "Whisky",
+          "categoryId": 3
+        }
+      },
+      {
+        "id": 4,
+        "name": "Espumante Prosecco",
+        "currentPrice": 89.90,
+        "subCategory": {
+          "id": 4,
+          "name": "Espumante",
+          "categoryId": 1
+        }
+      }
+    ]
+  }
+} 

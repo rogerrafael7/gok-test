@@ -1,0 +1,101 @@
+{
+  "orders": {
+    "page": 1,
+    "limit": 10,
+    "totalItems": 3,
+    "totalPages": 1,
+    "hasNextPage": false,
+    "hasPreviousPage": false,
+    "data": [
+      {
+        "id": 1,
+        "totalPrice": 289.70,
+        "customer": {
+          "id": 3,
+          "name": "Carlos Pereira"
+        },
+        "orderProducts": [
+          {
+            "product": {
+              "id": 1,
+              "name": "Vinho Tinto Cabernet"
+            },
+            "quantity": 2
+          },
+          {
+            "product": {
+              "id": 9,
+              "name": "Whisky 12 anos"
+            },
+            "quantity": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "totalPrice": 269.70,
+        "customer": {
+          "id": 1,
+          "name": "João Silva"
+        },
+        "orderProducts": [
+          {
+            "product": {
+              "id": 4,
+              "name": "Espumante Prosecco"
+            },
+            "quantity": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "totalPrice": 124.00,
+        "customer": {
+          "id": 5,
+          "name": "Pedro Santos"
+        },
+        "orderProducts": [
+          {
+            "product": {
+              "id": 6,
+              "name": "Cerveja Stout Imperial"
+            },
+            "quantity": 5
+          },
+          {
+            "product": {
+              "id": 7,
+              "name": "Cerveja Porter"
+            },
+            "quantity": 5
+          }
+        ]
+      }
+    ]
+  },
+  "biggestOrder2023": {
+    "id": 1,
+    "totalPrice": 289.70,
+    "customer": {
+      "id": 3,
+      "name": "Carlos Pereira"
+    },
+    "orderProducts": [
+      {
+        "product": {
+          "id": 1,
+          "name": "Vinho Tinto Cabernet"
+        },
+        "quantity": 2
+      },
+      {
+        "product": {
+          "id": 9,
+          "name": "Whisky 12 anos"
+        },
+        "quantity": 1
+      }
+    ]
+  }
+} 
