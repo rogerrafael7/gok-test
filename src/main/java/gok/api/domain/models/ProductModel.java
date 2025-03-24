@@ -10,8 +10,30 @@ import java.math.BigDecimal;
 @Setter
 @Builder
 public class ProductModel {
-    private Long id;
+    private Integer id;
     private String name;
-    private BigDecimal price;
-    private CategoryModel category;
+    private BigDecimal currentPrice;
+    private SubCategoryModel subCategory;
+
+    public ProductModel(Integer id, String name, BigDecimal currentPrice,
+                         Integer subCategoryId, String subCategoryName, Integer categoryId) {
+        this.id = id;
+        this.name = name;
+        this.currentPrice = currentPrice;
+        this.subCategory = SubCategoryModel.builder()
+                .id(subCategoryId)
+                .name(subCategoryName)
+                .categoryId(categoryId)
+                .build();
+    }
+
+    public ProductModel() {
+    }
+
+    public ProductModel(Integer id, String name, BigDecimal currentPrice, SubCategoryModel subCategory) {
+        this.id = id;
+        this.name = name;
+        this.currentPrice = currentPrice;
+        this.subCategory = subCategory;
+    }
 }

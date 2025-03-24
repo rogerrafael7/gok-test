@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class TopCustomerModel {
-    private Long id;
+    private Integer id;
     private String name;
     private Long totalDeCompras;
     private Double totalGasto;

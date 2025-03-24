@@ -7,5 +7,5 @@ import java.util.List;
 
 public abstract class CustomerRepository {
     public abstract List<TopCustomerModel> getTopCustomers();
-    public abstract List<ProductModel> getSuggestionProduct(Long customerId, Long categoryId);
+    public abstract List<ProductModel> getSuggestionProduct(Long customerId);
 }

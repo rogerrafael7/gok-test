@@ -10,8 +10,8 @@ import java.math.BigDecimal;
 @Setter
 @Builder
 public class OrderProductModel {
-    private Long id;
-    private Long quantity;
+    private Integer id;
+    private Integer quantity;
     private BigDecimal unitPrice;
     private ProductModel product;
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @Builder
 public class OrderModel {
-    private Long id;
+    private Integer id;
     private BigDecimal totalPrice;
     private CustomerModel customer;
     private List<OrderProductModel> orderProducts;

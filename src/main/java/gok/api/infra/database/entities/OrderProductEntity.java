@@ -13,10 +13,10 @@ import java.math.BigDecimal;
 public class OrderProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column
-    private Long quantity;
+    private Integer quantity;
 
     @Column(name = "unit_price")
     private BigDecimal unitPrice;

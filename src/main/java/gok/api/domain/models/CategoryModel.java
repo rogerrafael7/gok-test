@@ -4,10 +4,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Builder
 public class CategoryModel {
-    private Long id;
+    private Integer id;
     private String name;
+    private List<SubCategoryModel> subCategories;
 }

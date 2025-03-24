@@ -40,21 +40,39 @@ public class CustomerRepositoryImpl extends CustomerRepository implements Panach
     }
 
     @Override
-    public List<ProductModel> getSuggestionProduct(Long customerId, Long categoryId) {
-//        List<TopCategoryOrderedMapping> topCategoryOrderedMappings = em.createNativeQuery("""
-//                SELECT ca.name as categoria, count(ca.id) as count_categoria
-//                FROM orders o
-//                         INNER JOIN customers c ON c.id = o.customer_id
-//                         INNER JOIN order_products op ON o.id = op.order_id
-//                         INNER JOIN products p ON p.id = op.product_id
-//                         INNER JOIN categories ca ON ca.id = p.category_id
-//                WHERE c.id = :customerId AND p.id != 1
-//                group by ca.id
-//                order by count_categoria DESC
-//                LIMIT 1;
-//                """, TopCategoryOrderedMapping.class.getSimpleName())
-//                .setParameter("customerId", customerId)
-//                .getResultList();
-        return List.of();
+    public List<ProductModel> getSuggestionProduct(Long customerId) {
+        String query = """
+                                WITH produto_mais_comprato as (SELECT p.id           as produto_id,
+                                                      p.name         as produto_name,
+                                                      p.price        as produto_price,
+                                                      sc.id          as sub_categoria_id,
+                                                      sc.name        as sub_categoria_name,
+                                                      sc.category_id as categoria_id,
+                                                      count(p.id)    as count_produto
+                                               FROM products p
+                                                        inner join public.order_products op on p.id = op.product_id
+                                                        inner join public.orders o on o.id = op.order_id
+                                                        inner join public.customers c on c.id = o.customer_id
+                                                        inner join public.sub_categories sc on sc.id = p.sub_category_id
+                                               WHERE c.id = :customerId
+                                               group by p.id, sc.id, sc.name, sc.category_id, produto_price
+                                               ORDER BY count_produto DESC, produto_price DESC
+                                               LIMIT 1)
+                SELECT p.id           as produto_id,
+                       p.name         as produto_name,
+                       p.price        as produto_price,
+                       sc.id          as sub_categoria_id,
+                       sc.name        as sub_categoria_name,
+                       sc.category_id as categoria_id
+                FROM products p
+                         inner join sub_categories sc on sc.id = p.sub_category_id
+                WHERE sc.category_id = (SELECT categoria_id FROM produto_mais_comprato)
+                ORDER BY random()
+                LIMIT 1;
+                """;
+
+        return em.createNativeQuery(query, TopCategoryOrderedMapping.class.getSimpleName())
+                .setParameter("customerId", customerId)
+                .getResultList();
     }
 }

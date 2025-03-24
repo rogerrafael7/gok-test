@@ -18,7 +18,7 @@ public class CustomerService {
         return customerRepository.getTopCustomers();
     }
 
-    public List<ProductModel> getSuggestionProduct(Long customerId, Long categoryId) {
-        return customerRepository.getSuggestionProduct(customerId, categoryId);
+    public List<ProductModel> getSuggestionProduct(Long customerId) {
+        return customerRepository.getSuggestionProduct(customerId);
     }
 }

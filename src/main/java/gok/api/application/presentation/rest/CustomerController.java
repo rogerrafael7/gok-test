@@ -24,11 +24,10 @@ public class CustomerController {
     }
 
     @GET
-    @Path("/recomendacao/client/{customerId}/tipo/{categoryId}")
+    @Path("/recomendacao/client/{customerId}/tipo")
     public List<ProductModel> getSuggestionProduct(
-            @PathParam("customerId") Long customerId,
-            @PathParam("categoryId") Long categoryId
+            @PathParam("customerId") Long customerId
     ) {
-        return customerService.getSuggestionProduct(customerId, categoryId);
+        return customerService.getSuggestionProduct(customerId);
     }
 }

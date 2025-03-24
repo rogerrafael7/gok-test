@@ -42,7 +42,7 @@ public class OrderRepositoryImpl extends OrderRepository implements PanacheRepos
     }
 
     @Override
-    public OrderModel getBiggestOrderByYear(int year) throws Exception {
+    public OrderModel getBiggestOrderByYear(int year) {
         var params = Parameters.with("year", year);
         OrderEntity orderEntity = find("EXTRACT(YEAR FROM createdAt) = :year ORDER BY totalPrice DESC", params)
                 .firstResult();

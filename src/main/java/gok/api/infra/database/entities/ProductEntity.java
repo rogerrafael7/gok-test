@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String name;
@@ -22,15 +22,15 @@ public class ProductEntity {
     private BigDecimal price;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
-    private CategoryEntity category;
+    @JoinColumn(name = "sub_category_id")
+    private SubCategoryEntity subCategory;
 
     public ProductModel toModel() {
         return ProductModel.builder()
                 .id(id)
                 .name(name)
-                .price(price)
-                .category(category.toModel())
+                .currentPrice(price)
+                .subCategory(subCategory.toModel())
                 .build();
     }
 }

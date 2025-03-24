@@ -8,7 +8,7 @@ import jakarta.persistence.*;
         classes = @ConstructorResult(
                 targetClass = TopCustomerModel.class,
                 columns = {
-                        @ColumnResult(name = "id", type = Long.class),
+                        @ColumnResult(name = "id", type = Integer.class),
                         @ColumnResult(name = "name", type = String.class),
                         @ColumnResult(name = "count_compras", type = Long.class),
                         @ColumnResult(name = "total", type = Double.class),
@@ -18,5 +18,5 @@ import jakarta.persistence.*;
 @Entity
 public class TopCustomerEntityMapping {
     @Id
-    private Long id;
+    private Integer id;
 }
